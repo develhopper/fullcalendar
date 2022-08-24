@@ -5,6 +5,7 @@
   "description": "internal package",
   "docs": "https://fullcalendar.io/docs",
   "dependencies": {
+    "jalali-moment": "^3.3.11",
     "tslib": "^2.1.0"
   },
   "main": "main.cjs.js",
