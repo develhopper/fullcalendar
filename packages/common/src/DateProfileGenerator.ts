@@ -14,7 +14,7 @@ import { computeVisibleDayRange } from './util/date'
 import { getNow } from './reducers/current-date'
 import { CalendarApi } from './CalendarApi'
 
-import moment from 'jalali-moment'
+import * as moment from 'moment-jalaali'
 
 export interface DateProfile {
   currentRange: DateRange // TODO: does this include slotMinTime/slotMaxTime?
@@ -76,8 +76,8 @@ export class DateProfileGenerator { // only publicly used for isHiddenDay :(
     let { dateEnv } = this.props
 
     if(this.props.durationUnit == 'month' && this.props.dateEnv.locale.codeArg == 'fa'){
-      let m = moment(currentDate).locale('fa').subtract(1,'month').startOf('month').format('YYYY/MM/DD')
-      return this.build(moment.from(m,'fa','YYYY/MM/DD').locale('en').format('YYYY-MM-DD'), 1, forceToValid)
+      let m = moment(currentDate).startOf('jmonth').subtract(1,'month').format('YYYY/MM/DD')
+      return this.build(new Date(m), -1, forceToValid)
     }
 
     let prevDate = dateEnv.subtract(
@@ -92,8 +92,8 @@ export class DateProfileGenerator { // only publicly used for isHiddenDay :(
   buildNext(currentDateProfile: DateProfile, currentDate: DateMarker, forceToValid?: boolean): DateProfile {
     let { dateEnv } = this.props
     if(this.props.durationUnit == 'month' && this.props.dateEnv.locale.codeArg == 'fa'){
-      let m = moment(currentDate).locale('fa').add(1,'month').startOf('month').format('YYYY/MM/DD')
-      return this.build(moment.from(m,'fa','YYYY/MM/DD').locale('en').format('YYYY-MM-DD'), 1, forceToValid)
+      let m = moment(currentDate).startOf('jmonth').add(1,'month').format('YYYY/MM/DD')
+      return this.build(new Date(m), 1, forceToValid)
     }
     let nextDate = dateEnv.add(
       dateEnv.startOf(currentDate, currentDateProfile.currentRangeUnit), // important for start-of-month
@@ -204,11 +204,8 @@ export class DateProfileGenerator { // only publicly used for isHiddenDay :(
     let dayCount
 
     if(props.durationUnit == 'month' && props.dateEnv.locale.codeArg == 'fa'){
-      let start = moment(date).locale('fa').startOf('month').format('YYYY/MM/DD');
-      let end = moment(date).locale('fa').endOf('month').add(1,'day').format('YYYY/MM/DD');
-
-      start = moment.from(start,'fa','YYYY/MM/DD').format('YYYY-MM-DD')
-      end = moment.from(end,'fa','YYYY/MM/DD').format('YYYY-MM-DD')
+      let start = moment(date).startOf('jmonth').format('YYYY/MM/DD')
+      let end = moment(date).endOf('jmonth').add(1,'day').format('YYYY/MM/DD')
       range  = {start:new Date(start),end:new Date(end)}
       duration = props.duration
       unit = props.durationUnit

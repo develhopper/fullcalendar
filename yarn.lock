@@ -2076,7 +2076,7 @@ __metadata:
   resolution: "@fullcalendar/common@workspace:packages/common"
   dependencies:
     "@fullcalendar/core-preact": "workspace:*"
-    jalali-moment: ^3.3.11
+    moment-jalaali: ^0.9.6
     tslib: ^2.1.0
   languageName: unknown
   linkType: soft
@@ -7044,7 +7044,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bl@npm:^4.0.3, bl@npm:^4.1.0":
+"bl@npm:^4.0.3":
   version: 4.1.0
   resolution: "bl@npm:4.1.0"
   dependencies:
@@ -7904,13 +7904,6 @@ __metadata:
   dependencies:
     restore-cursor: ^3.1.0
   checksum: 15dbfc222f27da8cbc61680e4948b189e811224271f6ee5be9db0dcbabe23ae3b2c5a5663be6f17ee51f6203ab44abddd4f4cffb20d69458fc845fa86976f96a
-  languageName: node
-  linkType: hard
-
-"cli-spinners@npm:^2.5.0":
-  version: 2.7.0
-  resolution: "cli-spinners@npm:2.7.0"
-  checksum: b25b3dd31f2533ee73c77ff9dbe2d62c7f30561acabcac01b6e3904c5b0d71181d83d9d1bb365edd8d7c50c97ba5403a08228f92991c69f6aff37854327b190f
   languageName: node
   linkType: hard
 
@@ -9386,7 +9379,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"defaults@npm:^1.0.0, defaults@npm:^1.0.3":
+"defaults@npm:^1.0.0":
   version: 1.0.3
   resolution: "defaults@npm:1.0.3"
   dependencies:
@@ -13505,29 +13498,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"inquirer@npm:^8.0.0":
-  version: 8.2.4
-  resolution: "inquirer@npm:8.2.4"
-  dependencies:
-    ansi-escapes: ^4.2.1
-    chalk: ^4.1.1
-    cli-cursor: ^3.1.0
-    cli-width: ^3.0.0
-    external-editor: ^3.0.3
-    figures: ^3.0.0
-    lodash: ^4.17.21
-    mute-stream: 0.0.8
-    ora: ^5.4.1
-    run-async: ^2.4.0
-    rxjs: ^7.5.5
-    string-width: ^4.1.0
-    strip-ansi: ^6.0.0
-    through: ^2.3.6
-    wrap-ansi: ^7.0.0
-  checksum: 1db2986847feda613bec9ed3a6787c8841496df8af5fd20210df09a0245790b8c9bb3b59fd6cca0a53982eebb59de9776257df16c386268088c407b8a40774bb
-  languageName: node
-  linkType: hard
-
 "internal-ip@npm:^4.3.0":
   version: 4.3.0
   resolution: "internal-ip@npm:4.3.0"
@@ -13956,13 +13926,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"is-interactive@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "is-interactive@npm:1.0.0"
-  checksum: d79b435e5134ccd60dfe035117b1cddd5c5100e90b2d33428adfe1667e26f0114cc1bc7b3ff84a1b107de8ef27f155e3ecc3bb08c0e502a15c66300b4a45d9e5
-  languageName: node
-  linkType: hard
-
 "is-lambda@npm:^1.0.1":
   version: 1.0.1
   resolution: "is-lambda@npm:1.0.1"
@@ -14366,16 +14329,10 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jalali-moment@npm:^3.3.11":
-  version: 3.3.11
-  resolution: "jalali-moment@npm:3.3.11"
-  dependencies:
-    commander: ^7.0.0
-    inquirer: ^8.0.0
-    moment: ^2.26.0
-  bin:
-    jalalim: cli.js
-  checksum: f49eaf8b7999b976a34b116fa8795f9ca9dd800bafcc6c68796b3c70d89ea1f82fe3c6770d7bb3789f83a3713399b3c48b564f8ec7ea2261608529dec556399a
+"jalaali-js@npm:^1.1.0":
+  version: 1.2.6
+  resolution: "jalaali-js@npm:1.2.6"
+  checksum: cd54055c91fa638b0d51434b14e352d4d7555d7d5c271895f3700460aede8e0309f84ca76aca57aa2537d52f90140cf6bc3284de54f4424e50aaa2c4814849bf
   languageName: node
   linkType: hard
 
@@ -16953,6 +16910,18 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"moment-jalaali@npm:^0.9.6":
+  version: 0.9.6
+  resolution: "moment-jalaali@npm:0.9.6"
+  dependencies:
+    jalaali-js: ^1.1.0
+    moment: ^2.22.2
+    moment-timezone: ^0.5.21
+    rimraf: ^3.0.2
+  checksum: 8c26c92ace8c4f5d1d5bc554df800c18bd49b28736122c00cbafe4f7ceabaa9ce849a0324fb58059fc32ad7e8866b32a978fedc56d6dcce57b31fc8d3df9b8cb
+  languageName: node
+  linkType: hard
+
 "moment-locales-webpack-plugin@npm:^1.2.0":
   version: 1.2.0
   resolution: "moment-locales-webpack-plugin@npm:1.2.0"
@@ -16978,6 +16947,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"moment-timezone@npm:^0.5.21":
+  version: 0.5.35
+  resolution: "moment-timezone@npm:0.5.35"
+  dependencies:
+    moment: ">= 2.9.0"
+  checksum: b719cdc313830cf1964929c5bc69fed231ca185212f6e0825b0faf605cfa462e8fe9f98a26a5dd9f3f3b6970a58129ae65df66a717e7bb8f69c11665909825b0
+  languageName: node
+  linkType: hard
+
 "moment-timezone@npm:^0.5.31":
   version: 0.5.33
   resolution: "moment-timezone@npm:0.5.33"
@@ -16994,7 +16972,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"moment@npm:^2.26.0":
+"moment@npm:^2.22.2":
   version: 2.29.4
   resolution: "moment@npm:2.29.4"
   checksum: 5aa949ddcfc8dee4984123410cc0cd504caa6ef691bd191a527a1de67529895dcc8a8342cd67fb1953ae87172ea701bb957cea6d30abf0677ca9c62e834a5b5a
@@ -17791,23 +17769,6 @@ fsevents@^1.2.7:
     type-check: ^0.4.0
     word-wrap: ^1.2.3
   checksum: bdf5683f986d00e173e6034837b7b6a9e68c7e1a37d7684b240adf1758db9076cfb04c9f64be29327881bb06c5017afb8b65012c5f02d07b180e9f6f42595ffd
-  languageName: node
-  linkType: hard
-
-"ora@npm:^5.4.1":
-  version: 5.4.1
-  resolution: "ora@npm:5.4.1"
-  dependencies:
-    bl: ^4.1.0
-    chalk: ^4.1.0
-    cli-cursor: ^3.1.0
-    cli-spinners: ^2.5.0
-    is-interactive: ^1.0.0
-    is-unicode-supported: ^0.1.0
-    log-symbols: ^4.1.0
-    strip-ansi: ^6.0.0
-    wcwidth: ^1.0.1
-  checksum: 589ac687d6dfbac970f1bf4ec94f3e1cfc9e2a4dd4727a0c60dfcdef138f59b5de5694447881fa5a2793a91f0b2619a96bdd3d5425be30d155540abbe1df95b9
   languageName: node
   linkType: hard
 
@@ -21199,15 +21160,6 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^7.5.5":
-  version: 7.5.6
-  resolution: "rxjs@npm:7.5.6"
-  dependencies:
-    tslib: ^2.1.0
-  checksum: 1c724dd97f2a4347fce0b6e0382b224fdd942c12ab067830f6063d3aab97ec591c5ccba25db2964081086dce6aa539bc2ffb3bf3bb50296b953a37ebc098a5f2
-  languageName: node
-  linkType: hard
-
 "safe-buffer@npm:5.1.2, safe-buffer@npm:~5.1.0, safe-buffer@npm:~5.1.1":
   version: 5.1.2
   resolution: "safe-buffer@npm:5.1.2"
@@ -24428,15 +24380,6 @@ resolve@^2.0.0-next.3:
   dependencies:
     minimalistic-assert: ^1.0.0
   checksum: 5916a49cb25fc8c70e4e7eb2d01955061132687a79879292fbdee632952f368c12bc5a641d0404794dbc0e3563f8b6e74dda04467b3e96be8bcd0b919bd47a8c
-  languageName: node
-  linkType: hard
-
-"wcwidth@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "wcwidth@npm:1.0.1"
-  dependencies:
-    defaults: ^1.0.3
-  checksum: abf8ba432dd19a95af63895de6af932900a9451e175745551aeca0fd2d46604bc72ff80aa83adc3f67fb8389191329340e2864aefcf20655ffe91f0dbee5d953
   languageName: node
   linkType: hard
 
